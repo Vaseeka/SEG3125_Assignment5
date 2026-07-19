@@ -37,8 +37,8 @@ export default function BarChartCard({
     const rows = [OTTAWA, ...OTHERS.filter((u) => barCompare.includes(u.id))]
       .map((u) => ({ id: u.id, name: uName(u), value: u.values[yi], isOttawa: u.focus }))
       .sort((a, b) => b.value - a.value);
-    const rank = rows.findIndex((r) => r.isOttawa) + 1;
-    return { rows, rank, total: rows.length };
+    const ottawaValue = OTTAWA.values[yi];
+    return { rows, ottawaValue };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [barCompare, barYear, lang]);
 
@@ -53,9 +53,11 @@ export default function BarChartCard({
     >
       <div style={{ padding: "16px 20px", borderBottom: `1px solid ${colors.cardBorder}` }}>
         <div className="ed-title" style={{ fontSize: "18.5px", fontWeight: 600, color: colors.chartRed }}>
-          {t.bar.title(barData.rank, barData.total, barYear)}
+          {t.bar.title(nf.format(barData.ottawaValue), barYear)}
         </div>
-        <div style={{ fontSize: "12.5px", color: colors.textMuted, marginTop: "4px" }}>{t.bar.desc}</div>
+        {t.bar.desc && (
+          <div style={{ fontSize: "12.5px", color: colors.textMuted, marginTop: "4px" }}>{t.bar.desc}</div>
+        )}
       </div>
 
       <div className="ed-panel" style={{ display: "grid", gridTemplateColumns: "1fr 220px" }}>
@@ -111,7 +113,7 @@ export default function BarChartCard({
             }}
           >
             {t.displaySettings}
-            <HelpIcon text={t.displaySettingsHelp} />
+            <HelpIcon text={t.barDisplaySettingsHelp} />
           </div>
 
           <div

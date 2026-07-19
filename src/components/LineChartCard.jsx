@@ -44,7 +44,9 @@ export default function LineChartCard({ lang, t, lineRange, setLineRange, senten
         <div className="ed-title" style={{ fontSize: "18.5px", fontWeight: 600, color: colors.chartRed }}>
           {t.line.title(lineData.pct, lineRange[0], lineRange[1])}
         </div>
-        <div style={{ fontSize: "12.5px", color: colors.textMuted, marginTop: "4px" }}>{t.line.desc}</div>
+        {t.line.desc && (
+          <div style={{ fontSize: "12.5px", color: colors.textMuted, marginTop: "4px" }}>{t.line.desc}</div>
+        )}
       </div>
 
       <div className="ed-panel" style={{ display: "grid", gridTemplateColumns: "1fr 220px" }}>
@@ -113,7 +115,7 @@ export default function LineChartCard({ lang, t, lineRange, setLineRange, senten
             }}
           >
             {t.displaySettings}
-            <HelpIcon text={t.displaySettingsHelp} />
+            <HelpIcon text={t.lineDisplaySettingsHelp} />
           </div>
 
           <div

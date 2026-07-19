@@ -1,4 +1,5 @@
 import { colors } from "../theme/colors";
+import { SOURCE_URL } from "../i18n/translations";
 
 export default function Header({ t, lang, setLang }) {
   return (
@@ -41,7 +42,15 @@ export default function Header({ t, lang, setLang }) {
           color: "rgba(255,255,255,0.92)",
         }}
       >
-        {t.sourceLine}
+        {t.sourceText}{" "}
+        <a
+          href={SOURCE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#FFFFFF", textDecoration: "underline" }}
+        >
+          {t.sourceLinkLabel}
+        </a>
       </div>
     </>
   );

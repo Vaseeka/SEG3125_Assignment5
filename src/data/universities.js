@@ -1,19 +1,7 @@
 /* =========================================================
-  University Enrollment Data
+   University Enrollment Data
 
-  Source: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3710027703
-
-   TO UPDATE THE DATA: edit the `values` array for any university
-   below (must stay the same length/order as YEARS), or add a new
-   university object following the same shape.
-
-   `focus: true` marks the one university the whole dashboard is
-   built around (currently the University of Ottawa). Only one
-   university should have `focus: true`.
-
-   `article` controls English tooltip grammar:
-     true  -> "the University of Ottawa" ("University of X" names)
-     false -> "Carleton University" (no article needed)
+   Source: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3710027703
    ========================================================= */
 
 export const YEARS = Array.from({ length: 15 }, (_, i) => 2009 + i);

@@ -24,9 +24,9 @@ export const colors = {
   axisFade: "#C9BFA0",
 
   // Beige yellow colour for language selection button
-  gold: "#EDD98A",
+  gold: "#ffefb0",
   // Hover language selection button colour 
-  goldDark: "#DEC468",
+  goldDark: "#f1da84",
 
   // Text colour
   ink: "#2B2620",
