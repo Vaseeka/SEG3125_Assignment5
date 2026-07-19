@@ -17,7 +17,7 @@ export const T = {
     barDisplaySettingsHelp:
       "Choose which universities' enrolment data the bar chart displays, and for which year. The University of Ottawa's enrolment data is always shown.",
     lineDisplaySettingsHelp:
-      "Choose which range of years of University of Ottawa enrolment data the line chart displays.",
+      "Choose which years of the University of Ottawa enrolment data the line graph displays.",
     yearLabel: "Year",
     yearAxisLabel: "Year",
     studentsAxisLabel: "Number of full-time students",
@@ -47,7 +47,7 @@ export const T = {
     barDisplaySettingsHelp:
       "Choisissez quelles universités apparaissent dans le graphique à barres et pour quelle année. Les données d'inscription de l'Université d'Ottawa sont toujours affichées.",
     lineDisplaySettingsHelp:
-      "Choisissez la période couverte par les données d'inscription de l'Université d'Ottawa que le graphique linéaire doit afficher.",
+      "Choisissez les années pour lesquelles le graphique linéaire affiche les données d'inscription de l'Université d'Ottawa.",
     yearLabel: "Année",
     yearAxisLabel: "Année",
     studentsAxisLabel: "Nombre d'étudiants à temps plein",
