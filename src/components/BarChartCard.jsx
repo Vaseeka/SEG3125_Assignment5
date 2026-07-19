@@ -39,7 +39,6 @@ export default function BarChartCard({
       .sort((a, b) => b.value - a.value);
     const ottawaValue = OTTAWA.values[yi];
     return { rows, ottawaValue };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [barCompare, barYear, lang]);
 
   return (

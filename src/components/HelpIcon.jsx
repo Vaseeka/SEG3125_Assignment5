@@ -1,11 +1,41 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { colors } from "../theme/colors";
+
+const VIEWPORT_MARGIN = 8;
 
 export default function HelpIcon({ text }) {
   const [show, setShow] = useState(false);
+  const wrapRef = useRef(null);
+  const bubbleRef = useRef(null);
+
+  const [bubbleLeft, setBubbleLeft] = useState(null);
+  const [arrowLeft, setArrowLeft] = useState(null);
+
+  useLayoutEffect(() => {
+    if (!show || !wrapRef.current || !bubbleRef.current) return;
+
+    const wrapRect = wrapRef.current.getBoundingClientRect();
+    const bubbleWidth = bubbleRef.current.getBoundingClientRect().width;
+
+    // Where the bubble would sit if perfectly centered on the icon
+    const idealLeft = wrapRect.left + wrapRect.width / 2 - bubbleWidth / 2;
+
+    // Clamp so it never goes past either edge of the viewport
+    const minLeft = VIEWPORT_MARGIN;
+    const maxLeft = window.innerWidth - VIEWPORT_MARGIN - bubbleWidth;
+    const clampedLeft = Math.min(Math.max(idealLeft, minLeft), maxLeft);
+
+    setBubbleLeft(clampedLeft - wrapRect.left);
+
+    // Keep the little arrow pointing at the icon even if the bubble
+    // itself had to shift to stay on-screen
+    const iconCenter = wrapRect.left + wrapRect.width / 2;
+    setArrowLeft(iconCenter - clampedLeft);
+  }, [show]);
 
   return (
     <span
+      ref={wrapRef}
       style={{ position: "relative", display: "inline-flex", marginLeft: "6px" }}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
@@ -33,11 +63,12 @@ export default function HelpIcon({ text }) {
         ?
       </span>
       <span
+        ref={bubbleRef}
         style={{
           position: "absolute",
           bottom: "150%",
-          left: "50%",
-          transform: "translateX(-50%)",
+          left: bubbleLeft !== null ? `${bubbleLeft}px` : "50%",
+          transform: bubbleLeft !== null ? "none" : "translateX(-50%)",
           background: "#FFFFFF",
           color: colors.ink,
           padding: "9px 12px",
@@ -62,7 +93,7 @@ export default function HelpIcon({ text }) {
           style={{
             position: "absolute",
             top: "100%",
-            left: "50%",
+            left: arrowLeft !== null ? `${arrowLeft}px` : "50%",
             transform: "translateX(-50%)",
             width: 0,
             height: 0,
