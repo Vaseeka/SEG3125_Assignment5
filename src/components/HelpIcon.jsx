@@ -48,6 +48,7 @@ export default function HelpIcon({ text }) {
           lineHeight: 1.4,
           width: "200px",
           textAlign: "left",
+          textTransform: "none",
           opacity: show ? 1 : 0,
           visibility: show ? "visible" : "hidden",
           transition: "opacity 0.15s",

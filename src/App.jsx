@@ -25,7 +25,7 @@ export default function App() {
         background: colors.pageBg,
         color: colors.ink,
         minHeight: "100vh",
-        borderRadius: "12px",
+        borderRadius: "0 0 12px 12px",
         overflow: "hidden",
         boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
       }}

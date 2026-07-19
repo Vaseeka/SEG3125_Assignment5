@@ -1,9 +1,3 @@
-/* =========================================================
-   "Nice numbers" axis helper (Heckbert's algorithm)
-   Produces evenly spaced, round-number axis ticks instead of
-   whatever raw min/max the data happens to have.
-   ========================================================= */
-
 function niceNum(range, round) {
   const exponent = Math.floor(Math.log10(range));
   const fraction = range / Math.pow(10, exponent);
@@ -37,7 +31,10 @@ export function niceAxis(min, max, tickCount = 5) {
 }
 
 export function numFmt(lang) {
-  return new Intl.NumberFormat(lang === "fr" ? "fr-CA" : "en-CA");
+  if (lang === "fr") {
+    return new Intl.NumberFormat("fr-CA", { useGrouping: false });
+  }
+  return new Intl.NumberFormat("en-CA");
 }
 
 export const yearLabel = (y) => String(y);

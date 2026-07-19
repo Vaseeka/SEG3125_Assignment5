@@ -24,8 +24,8 @@ export const T = {
     yearRangeLabel: "Year range",
     students: "students",
 
-    barTooltip: (v, name) => `${v} full-time students enrolled at ${name}`,
-    lineTooltip: (v, name, y) => `${v} full-time students enrolled at ${name} in ${y}`,
+    barTooltip: (v, name) => `${v} full-time students were enrolled at ${name}`,
+    lineTooltip: (v, name, y) => `${v} full-time students were enrolled at ${name} in ${y}`,
 
     bar: {
       title: (value, y) => `${value} full-time students were enrolled at the University of Ottawa in ${y}`,
@@ -37,7 +37,7 @@ export const T = {
   },
 
   fr: {
-    title: "Tableau de bord sur les inscriptions des étudiants à temps plein de l’Université d’Ottawa",
+    title: "Tableau de bord sur les inscriptions des étudiants à temps plein de l'Université d'Ottawa",
     langLink: "English",
     sourceText: "Données sur les inscriptions recueillies par Statistique Canada",
     sourceLinkLabel: "(accédez à l'ensemble de données ici)",
@@ -45,20 +45,20 @@ export const T = {
     ledgerHeading: "Universités",
     displaySettings: "Paramètres d'affichage",
     barDisplaySettingsHelp:
-      "Choisissez quelles données d'inscription des universités que le graphique à barres affiche et quelle année. Les données d'inscription de l'Université d'Ottawa sont toujours affichées.",
+      "Choisissez quelles universités apparaissent dans le graphique à barres et pour quelle année. Les données d'inscription de l'Université d'Ottawa sont toujours affichées.",
     lineDisplaySettingsHelp:
-      "Choisissez la période couverte par les données d'inscription à l'Université d'Ottawa que le graphique linéaire doit afficher.",
+      "Choisissez la période couverte par les données d'inscription de l'Université d'Ottawa que le graphique linéaire doit afficher.",
     yearLabel: "Année",
     yearAxisLabel: "Année",
     studentsAxisLabel: "Nombre d'étudiants à temps plein",
     yearRangeLabel: "Période",
     students: "étudiants",
 
-    barTooltip: (v, name) => `${v} étudiants à temps plein inscrits à ${name}`,
-    lineTooltip: (v, name, y) => `${v} étudiants à temps plein inscrits à ${name} en ${y}`,
+    barTooltip: (v, name) => `${v} étudiants à temps plein étaient inscrits à ${name}`,
+    lineTooltip: (v, name, y) => `${v} étudiants à temps plein étaient inscrits à ${name} en ${y}`,
 
     bar: {
-      title: (value, y) => `En ${y}, ${value} étudiants etaient inscrit a l'Université d'Ottawa`,
+      title: (value, y) => `${value} étudiants à temps plein étaient inscrits à l'Université d'Ottawa en ${y}`,
     },
     line: {
       title: (pct, y0, y1) =>
