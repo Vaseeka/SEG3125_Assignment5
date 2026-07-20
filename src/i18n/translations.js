@@ -51,7 +51,7 @@ export const T = {
     yearLabel: "Année",
     yearAxisLabel: "Année",
     studentsAxisLabel: "Nombre d'étudiants à temps plein",
-    yearRangeLabel: "Période",
+    yearRangeLabel: "Plage d'années",
     students: "étudiants",
 
     barTooltip: (v, name) => `${v} étudiants à temps plein étaient inscrits à ${name}`,
